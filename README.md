@@ -18,7 +18,7 @@ Create a [new Realtime Database](https://console.firebase.google.com), or you ca
 
 Create a [new Algolia application](https://www.algolia.com/manage/applications), or use one that already exists. We'll be creating using an index called "contacts", so make sure that doesn't already exist.
 
-## Tutorial
+## Usage
 
 Clone this repository.
 
@@ -46,7 +46,7 @@ Download a service account JSON file from Firebase. This will be used to authent
 
 This file and .env are in the .gitgnore, so you don't have to worry about accidentally checking them in.
 
-##### Load example data
+#### Load example data
 
 Load example contacts data into your Firebase database running:
 
@@ -56,7 +56,7 @@ node loadFirebase
 
 Look at the code in the `loadFirebase.js` file to see what is happening. If this is successful, you will see a message "Contacts loaded to firebase" and you will be able to see data in your Firebase database in the console.
 
-##### First-time import into Algolia
+#### First-time import into Algolia
 
 Import these contacts records into Algolia by running:
 
@@ -66,7 +66,7 @@ node importFirebaseToAlgolia
 
 If this is successful, you should see "Firebase<>Algolia import done". Your contact records have been imported into Algolia and you can see them in your dashboard.
 
-##### Ongoing sync to Algolia
+#### Ongoing sync to Algolia
 
 In a real application, you will want to listen for Firebase changes and index them as they come in. To do this, run:
 

@@ -1,12 +1,12 @@
 # algolia-firebase-nodejs example
 
-Algolia is a great way to make your Firebase data searchable. This repository contains a tutorial and some example code you can use to get an idea for how it works.
+Algolia is a nice way to make your Firebase data searchable. Out of the box you get prefix matching, typo tolerance and more advanced features like faceting and filtering. This repository contains contains example code and instructions on how to run it.
 
 ## Key files
 
 1. `importFirebaseToAlgolia.js`: Shows how to do a one-time import of all Firebase data under a specific ref.
 1. `syncFirebaseToAlgolia.js`: Shows how to listen to changes of children of a ref and sync them to Algolia.
-1. `loadFirebase.js`: Loads a few records into Firebase so they can be sync'd to Algolia later.
+1. `loadFirebase.js`: Loads test data into Firebase so it can be sent to Algolia later.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Create a [new Realtime Database](https://console.firebase.google.com), or you ca
 
 #### Algolia
 
-Create a [new Algolia application](https://www.algolia.com/manage/applications), or use one that already exists. We'll be creating using an index called "contacts", so make sure that doesn't already exist.
+Create a [new Algolia application](https://www.algolia.com/manage/applications), or use one that already exists. We'll be creating an index called "contacts", so make sure that doesn't already exist.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Install dependencies with `npm install` or `yarn`.
 yarn
 ```
 
-Create a file called `.env`. Substitute your values for the placeholders in <>:
+Create a file called `.env`. Substitute your values for the placeholders:
 
 ``` shell
 ALGOLIA_APP_ID=<algolia-app-id>

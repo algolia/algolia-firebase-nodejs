@@ -1,0 +1,17 @@
+{
+  "name": "algolia-firebase-nodejs",
+  "version": "1.0.0",
+  "description": "Shows how to index Firebase data with Algolia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "algoliasearch": "^3.22.1",
+    "dotenv": "^4.0.0",
+    "firebase": "^3.7.2",
+    "firebase-admin": "^4.1.3"
+  }
+}

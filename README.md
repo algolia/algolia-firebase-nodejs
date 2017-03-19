@@ -1,4 +1,4 @@
-# algolia-firebase-nodejs Tutorial
+# algolia-firebase-nodejs example
 
 Algolia is a great way to make your Firebase data searchable. This repository contains a tutorial and some example code you can use to get an idea for how it works.
 
@@ -10,29 +10,45 @@ Algolia is a great way to make your Firebase data searchable. This repository co
 
 ## Prerequisites
 
-Firebase: Create a new Realtime Database, or you can use one that already exists. We'll be using the ref "contacts" for the whole example, so make sure there isn't any data there already.
+#### Firebase
 
-Algolia: Create a new Algolia application, or use one that already exists. We'll be creating using an index called "contacts", so make sure that doesn't already exist.
+Create a [new Realtime Database](https://console.firebase.google.com), or you can use one that already exists. We'll be using the ref "contacts" for the whole example, so make sure there isn't any data there already.
+
+#### Algolia
+
+Create a [new Algolia application](https://www.algolia.com/manage/applications), or use one that already exists. We'll be creating using an index called "contacts", so make sure that doesn't already exist.
 
 ## Tutorial
 
-1. Clone this repository.
+Clone this repository.
 
-2. Install dependencies with `npm install` or `yarn`.
+```
+git clone git@github.com:algolia/algolia-firebase-nodejs.git
+```
 
-3. Create a file called `.env`. Substitute your values for the placeholders in <>:
+Install dependencies with `npm install` or `yarn`.
 
+```
+yarn
+```
+
+Create a file called `.env`. Substitute your values for the placeholders in <>:
+
+``` shell
 ALGOLIA_APP_ID=<algolia-app-id>
 ALGOLIA_API_KEY=<algolia-api-key>
 FIREBASE_DATABASE_URL=https://<my-firebase-database>.firebaseio.com
+```
 
 Make sure the Algolia API key you've chosen has write access. If in doubt, use your Admin API Key.
 
-4. Download a service account JSON file from Firebase. This will be used to authenticate you as an admin so you can read and write data. From the Firebase console for your database, click the gear icon and choose "Project Settings". Go to the "Service Accounts" tab. Click "Generate New Private Key". Move the downloaded file into this directory and name it `serviceAccountKey.json`.
+Download a service account JSON file from Firebase. This will be used to authenticate you as an admin so you can read and write data. From the Firebase console for your database, click the gear icon and choose "Project Settings". Go to the "Service Accounts" tab. Click "Generate New Private Key". Move the downloaded file into this directory and name it `serviceAccountKey.json`.
 
 This file and .env are in the .gitgnore, so you don't have to worry about accidentally checking them in.
 
-4. Test out your Firebase configuration by running:
+##### Load example data
+
+Load example contacts data into your Firebase database running:
 
 ```
 node loadFirebase
@@ -40,7 +56,9 @@ node loadFirebase
 
 Look at the code in the `loadFirebase.js` file to see what is happening. If this is successful, you will see a message "Contacts loaded to firebase" and you will be able to see data in your Firebase database in the console.
 
-5. Import these contacts records into Algolia by running:
+##### First-time import into Algolia
+
+Import these contacts records into Algolia by running:
 
 ```
 node importFirebaseToAlgolia
@@ -48,7 +66,9 @@ node importFirebaseToAlgolia
 
 If this is successful, you should see "Firebase<>Algolia import done". Your contact records have been imported into Algolia and you can see them in your dashboard.
 
-6. In a real application, you will want to listen for Firebase changes and index them as they come in. To do this, run:
+##### Ongoing sync to Algolia
+
+In a real application, you will want to listen for Firebase changes and index them as they come in. To do this, run:
 
 ```
 node syncFirebaseToAlgolia

@@ -11,6 +11,6 @@
   "dependencies": {
     "algoliasearch": "^3.22.1",
     "dotenv": "^4.0.0",
-    "firebase-admin": "^4.1.3"
+    "firebase-admin": "^4.2.1"
   }
 }

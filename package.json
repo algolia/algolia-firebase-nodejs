@@ -1,12 +1,18 @@
 {
+  "private": true,
   "name": "algolia-firebase-nodejs",
   "version": "1.0.0",
   "description": "Shows how to index Firebase data with Algolia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "load": "node loadFirebase",
+    "import": "node importFirebaseToAlgolia",
+    "sync": "node syncFirebaseToAlgolia"
   },
-  "author": "",
+  "author": {
+    "name": "Algolia, Inc.",
+    "url": "https://www.algolia.com"
+  },
   "license": "ISC",
   "dependencies": {
     "algoliasearch": "^3.22.1",
